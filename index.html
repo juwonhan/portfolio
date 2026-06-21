@@ -1,162 +1,254 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한주원 | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한주원 | Portfolio</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body{
-            background:#0f172a;
-            color:white;
-            font-family:Arial, sans-serif;
-            line-height:1.7;
-        }
+    html { scroll-behavior: smooth; }
 
-        .container{
-            width:90%;
-            max-width:1100px;
-            margin:auto;
-        }
+    body {
+      background: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
 
-        .hero{
-            text-align:center;
-            padding:110px 0 80px;
-        }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 16px;
+      text-align: center;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-        .profile{
-            width:180px;
-            height:180px;
-            border-radius:50%;
-            object-fit:cover;
-            border:5px solid #38bdf8;
-            margin-bottom:25px;
-            box-shadow:0 0 25px rgba(56,189,248,0.4);
-        }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: bold;
+      font-size: 14px;
+    }
 
-        .hero h1{
-            font-size:56px;
-            margin-bottom:8px;
-        }
+    .navbar a:hover { color: #38bdf8; }
 
-        .hero p{
-            color:#94a3b8;
-            font-size:22px;
-        }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        section{
-            padding:70px 0;
-        }
+    .hero {
+      text-align: center;
+      padding: 145px 0 80px;
+    }
 
-        h2{
-            margin-bottom:20px;
-            color:#38bdf8;
-            font-size:30px;
-        }
+    .profile {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #38bdf8;
+      margin-bottom: 24px;
+      box-shadow: 0 0 25px rgba(56,189,248,0.4);
+    }
 
-        .card{
-            background:#1e293b;
-            padding:28px;
-            border-radius:18px;
-            margin-bottom:20px;
-            border:1px solid rgba(255,255,255,0.08);
-        }
+    .hero h1 {
+      font-size: 54px;
+      margin-bottom: 8px;
+    }
 
-        .skill{
-            display:inline-block;
-            background:#38bdf8;
-            color:black;
-            padding:8px 16px;
-            border-radius:30px;
-            margin:5px;
-            font-weight:bold;
-        }
+    .hero p {
+      color: #94a3b8;
+      font-size: 21px;
+    }
 
-        .buttons{
-            margin-top:25px;
-        }
+    .buttons { margin-top: 24px; }
 
-        .btn{
-            display:inline-block;
-            text-decoration:none;
-            color:white;
-            border:1px solid #38bdf8;
-            padding:10px 18px;
-            border-radius:30px;
-            margin:5px;
-        }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      border: 1px solid #38bdf8;
+      padding: 10px 18px;
+      border-radius: 30px;
+      margin: 5px;
+    }
 
-        .btn:hover{
-            background:#38bdf8;
-            color:black;
-        }
+    .btn:hover {
+      background: #38bdf8;
+      color: black;
+    }
 
-        footer{
-            text-align:center;
-            padding:50px 0;
-            color:#94a3b8;
-        }
-    </style>
+    section {
+      padding: 70px 0;
+      scroll-margin-top: 90px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      font-size: 31px;
+      margin-bottom: 22px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 20px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    .skill, .tag {
+      display: inline-block;
+      border-radius: 30px;
+      margin: 5px;
+      font-weight: bold;
+    }
+
+    .skill {
+      background: #38bdf8;
+      color: black;
+      padding: 8px 16px;
+    }
+
+    .tag {
+      background: #334155;
+      color: #e2e8f0;
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+
+    .project-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin-left: 20px;
+      color: #cbd5e1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 45px 0;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 600px) {
+      .navbar a {
+        margin: 0 5px;
+        font-size: 12px;
+      }
+
+      .hero h1 { font-size: 40px; }
+
+      .profile {
+        width: 145px;
+        height: 145px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
+  <nav class="navbar">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
 
-    <div class="hero">
-        <img src="profile.jpg" alt="프로필 사진" class="profile">
+  <div class="container">
 
-        <h1>한주원</h1>
-        <p>Unity Game Developer</p>
+    <div class="hero" id="home">
+      <img src="profile.jpg" alt="프로필 사진" class="profile">
 
-        <div class="buttons">
-            <a href="https://github.com/juwonhan" class="btn">GitHub</a>
-            <a href="mailto:juwonproject123@gmail.com" class="btn">Email</a>
-        </div>
+      <h1>한주원</h1>
+      <p>Game Client Programmer<br>Unity Developer</p>
+
+      <div class="buttons">
+        <a href="https://github.com/juwonhan" class="btn">GitHub</a>
+        <a href="mailto:juwonproject123@gmail.com" class="btn">Email</a>
+      </div>
     </div>
 
-    <section>
-        <h2>About Me</h2>
-        <div class="card">
-            게임 개발자를 목표로 공부하고 있으며,
-            Unity와 C#을 활용한 2D 로그라이크 게임 개발 프로젝트를 진행했습니다.
-        </div>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>원광대학교 게임콘텐츠학과 졸업 예정</p>
+        <p>Unity를 활용한 게임 개발에 관심이 있습니다.</p>
+        <p>캡스톤 프로젝트에서 몬스터 제작, 애니메이션 적용 및 프리팹 제작을 담당했습니다.</p>
+        <p>AI 기반 개발 도구 활용에 익숙합니다.</p>
+      </div>
     </section>
 
-    <section>
-        <h2>Skills</h2>
-        <span class="skill">Unity</span>
-        <span class="skill">C#</span>
-        <span class="skill">Git</span>
-        <span class="skill">GitHub</span>
+    <section id="skills">
+      <h2>Skills</h2>
+      <span class="skill">Unity</span>
+      <span class="skill">C#</span>
+      <span class="skill">Git</span>
+      <span class="skill">GitHub</span>
+      <span class="skill">AI Tools</span>
+      <span class="skill">Prefab</span>
+      <span class="skill">Animation</span>
     </section>
 
-    <section>
-        <h2>Projects</h2>
-        <div class="card">
-            <h3>2D 로그라이크 캡스톤 게임</h3>
-            <p>프로젝트 내용은 추후 작성 예정입니다.</p>
-        </div>
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="card project-card">
+        <h3>2D 로그라이크 액션 게임</h3>
+
+        <p>
+          Unity 기반 2D 로그라이크 액션 게임 캡스톤 프로젝트입니다.
+        </p>
+
+        <h4>담당 역할</h4>
+        <ul>
+          <li>AI 기반 몬스터 리소스 제작</li>
+          <li>몬스터 공격 모션 제작 및 애니메이션 적용</li>
+          <li>Unity 몬스터 프리팹 제작</li>
+          <li>몬스터 데이터 세팅 및 테스트</li>
+        </ul>
+
+        <br>
+
+        <span class="tag">Unity</span>
+        <span class="tag">2D Game</span>
+        <span class="tag">Monster</span>
+        <span class="tag">Animation</span>
+        <span class="tag">Prefab</span>
+        <span class="tag">AI Asset</span>
+      </div>
     </section>
 
-    <section>
-        <h2>Contact</h2>
-        <div class="card">
-            Email : juwonproject123@gmail.com<br>
-            GitHub : https://github.com/juwonhan
-        </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        Email : juwonproject123@gmail.com<br>
+        GitHub : https://github.com/juwonhan
+      </div>
     </section>
 
-</div>
+  </div>
 
-<footer>
+  <footer>
     © 2026 Han Juwon Portfolio
-</footer>
+  </footer>
 
 </body>
 </html>
