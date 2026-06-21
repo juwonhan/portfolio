@@ -27,43 +27,74 @@
 
         .hero{
             text-align:center;
-            padding:120px 0;
+            padding:110px 0 80px;
+        }
+
+        .profile{
+            width:180px;
+            height:180px;
+            border-radius:50%;
+            object-fit:cover;
+            border:5px solid #38bdf8;
+            margin-bottom:25px;
+            box-shadow:0 0 25px rgba(56,189,248,0.4);
         }
 
         .hero h1{
-            font-size:60px;
-            margin-bottom:10px;
+            font-size:56px;
+            margin-bottom:8px;
         }
 
         .hero p{
             color:#94a3b8;
-            font-size:20px;
+            font-size:22px;
         }
 
         section{
-            padding:80px 0;
+            padding:70px 0;
         }
 
         h2{
             margin-bottom:20px;
             color:#38bdf8;
+            font-size:30px;
         }
 
         .card{
             background:#1e293b;
-            padding:25px;
-            border-radius:15px;
+            padding:28px;
+            border-radius:18px;
             margin-bottom:20px;
+            border:1px solid rgba(255,255,255,0.08);
         }
 
         .skill{
             display:inline-block;
             background:#38bdf8;
             color:black;
-            padding:8px 15px;
+            padding:8px 16px;
             border-radius:30px;
             margin:5px;
             font-weight:bold;
+        }
+
+        .buttons{
+            margin-top:25px;
+        }
+
+        .btn{
+            display:inline-block;
+            text-decoration:none;
+            color:white;
+            border:1px solid #38bdf8;
+            padding:10px 18px;
+            border-radius:30px;
+            margin:5px;
+        }
+
+        .btn:hover{
+            background:#38bdf8;
+            color:black;
         }
 
         footer{
@@ -78,22 +109,27 @@
 <div class="container">
 
     <div class="hero">
+        <img src="profile.jpg" alt="프로필 사진" class="profile">
+
         <h1>한주원</h1>
         <p>Unity Game Developer</p>
+
+        <div class="buttons">
+            <a href="https://github.com/juwonhan" class="btn">GitHub</a>
+            <a href="mailto:juwonproject123@gmail.com" class="btn">Email</a>
+        </div>
     </div>
 
     <section>
         <h2>About Me</h2>
-
         <div class="card">
             게임 개발자를 목표로 공부하고 있으며,
-            Unity를 활용한 2D 로그라이크 게임 제작 프로젝트를 진행했습니다.
+            Unity와 C#을 활용한 2D 로그라이크 게임 개발 프로젝트를 진행했습니다.
         </div>
     </section>
 
     <section>
         <h2>Skills</h2>
-
         <span class="skill">Unity</span>
         <span class="skill">C#</span>
         <span class="skill">Git</span>
@@ -102,20 +138,16 @@
 
     <section>
         <h2>Projects</h2>
-
         <div class="card">
-            2D 로그라이크 캡스톤 게임
-            <br>
-            (작성 예정)
+            <h3>2D 로그라이크 캡스톤 게임</h3>
+            <p>프로젝트 내용은 추후 작성 예정입니다.</p>
         </div>
     </section>
 
     <section>
         <h2>Contact</h2>
-
         <div class="card">
-            Email : 추후 작성
-            <br>
+            Email : juwonproject123@gmail.com<br>
             GitHub : https://github.com/juwonhan
         </div>
     </section>
