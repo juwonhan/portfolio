@@ -3,39 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juwon Portfolio</title>
+    <title>한주원 | Portfolio</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Arial, sans-serif;
+            line-height:1.7;
+        }
+
+        .container{
+            width:90%;
+            max-width:1100px;
+            margin:auto;
+        }
+
+        .hero{
+            text-align:center;
+            padding:120px 0;
+        }
+
+        .hero h1{
+            font-size:60px;
+            margin-bottom:10px;
+        }
+
+        .hero p{
+            color:#94a3b8;
+            font-size:20px;
+        }
+
+        section{
+            padding:80px 0;
+        }
+
+        h2{
+            margin-bottom:20px;
+            color:#38bdf8;
+        }
+
+        .card{
+            background:#1e293b;
+            padding:25px;
+            border-radius:15px;
+            margin-bottom:20px;
+        }
+
+        .skill{
+            display:inline-block;
+            background:#38bdf8;
+            color:black;
+            padding:8px 15px;
+            border-radius:30px;
+            margin:5px;
+            font-weight:bold;
+        }
+
+        footer{
+            text-align:center;
+            padding:50px 0;
+            color:#94a3b8;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>한주원 포트폴리오</h1>
+<div class="container">
 
-    <p>
-        Unity Game Developer Portfolio
-    </p>
+    <div class="hero">
+        <h1>한주원</h1>
+        <p>Unity Game Developer</p>
+    </div>
 
-    <hr>
+    <section>
+        <h2>About Me</h2>
 
-    <h2>About</h2>
-    <p>
-        게임 개발자를 목표로 공부하고 있습니다.
-    </p>
+        <div class="card">
+            게임 개발자를 목표로 공부하고 있으며,
+            Unity를 활용한 2D 로그라이크 게임 제작 프로젝트를 진행했습니다.
+        </div>
+    </section>
 
-    <h2>Projects</h2>
-    <p>
-        준비 중...
-    </p>
+    <section>
+        <h2>Skills</h2>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>Unity</li>
-        <li>C#</li>
-        <li>GitHub</li>
-    </ul>
+        <span class="skill">Unity</span>
+        <span class="skill">C#</span>
+        <span class="skill">Git</span>
+        <span class="skill">GitHub</span>
+    </section>
 
-    <h2>Contact</h2>
-    <p>
-        이메일 : 추후 작성
-    </p>
+    <section>
+        <h2>Projects</h2>
+
+        <div class="card">
+            2D 로그라이크 캡스톤 게임
+            <br>
+            (작성 예정)
+        </div>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+
+        <div class="card">
+            Email : 추후 작성
+            <br>
+            GitHub : https://github.com/juwonhan
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 Han Juwon Portfolio
+</footer>
 
 </body>
 </html>
