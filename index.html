@@ -276,26 +276,17 @@
       border-top: 1px solid #e5e7eb;
     }
 
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
+    #contact {
+      text-align: center;
     }
 
-    .contact-card {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    #contact .section-desc {
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .contact-card span {
-      color: #6b7280;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .contact-card strong {
-      font-size: 18px;
+    #contact .btn {
+      min-width: 160px;
     }
 
     footer {
@@ -343,10 +334,6 @@
       .monster-gallery {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -379,11 +366,6 @@
         <p>Unity를 활용한 게임 개발을 공부하고 있습니다.</p>
         <p>개인 프로젝트와 캡스톤 프로젝트를 통해 2D 및 3D 게임 제작 경험을 쌓았습니다.</p>
         <p>게임 제작 과정에서 AI 기반 콘텐츠 제작 도구를 활용한 경험이 있습니다.</p>
-
-        <div class="buttons">
-          <a href="https://github.com/juwonhan" class="btn primary">GitHub</a>
-          <a href="mailto:hjuwon2999@naver.com" class="btn secondary">Email</a>
-        </div>
       </div>
     </section>
 
@@ -599,18 +581,15 @@
     </section>
 
     <section id="contact">
-      <h2 class="section-title">Contact</h2>
+      <h2 class="section-title">Let's Connect</h2>
 
-      <div class="info-grid">
-        <div class="card contact-card">
-          <span>Email</span>
-          <strong>hjuwon2999@naver.com</strong>
-        </div>
+      <p class="section-desc">
+        게임 개발과 Unity 프로젝트에 대해 언제든지 연락 주세요.
+      </p>
 
-        <div class="card contact-card">
-          <span>GitHub</span>
-          <strong>github.com/juwonhan</strong>
-        </div>
+      <div class="buttons">
+        <a href="https://github.com/juwonhan" class="btn primary">GitHub</a>
+        <a href="mailto:hjuwon2999@naver.com" class="btn secondary">Email</a>
       </div>
     </section>
 
