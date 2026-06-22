@@ -3,19 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="한주원 게임 클라이언트 프로그래머 포트폴리오. Unity 기반 개인 프로젝트와 캡스톤 프로젝트 경험을 정리한 한국어 포트폴리오 사이트입니다."
-  />
+  <meta name="description" content="한주원 게임 클라이언트 프로그래머 포트폴리오. Unity 기반 개인 프로젝트와 캡스톤 프로젝트 경험을 정리한 포트폴리오 사이트입니다." />
   <title>한주원 | Portfolio</title>
 
-  <!-- Pretendard 웹폰트 -->
-  <link
-    rel="stylesheet"
-    as="style"
-    crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-  />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
   <style>
     :root {
@@ -28,6 +20,7 @@
       --line-strong: #d1d5db;
       --primary: #111827;
       --primary-hover: #0b1220;
+      --accent: #2563eb;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --radius-xl: 24px;
       --radius-lg: 20px;
@@ -35,71 +28,22 @@
       --container: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family:
-        "Pretendard",
-        -apple-system,
-        BlinkMacSystemFont,
-        "Apple SD Gothic Neo",
-        "Noto Sans KR",
-        "Segoe UI",
-        Roboto,
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.7;
       word-break: keep-all;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 3px solid #94a3b8;
-      outline-offset: 3px;
-      border-radius: 8px;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 16px;
-      z-index: 2000;
-      background: var(--primary);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 10px;
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus {
-      top: 16px;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
     .site-header {
       position: sticky;
@@ -121,8 +65,8 @@
     }
 
     .logo {
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-weight: 900;
+      letter-spacing: -0.04em;
       white-space: nowrap;
     }
 
@@ -135,13 +79,11 @@
 
     .nav-links a {
       font-size: 0.95rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--muted-strong);
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .container {
       width: min(var(--container), calc(100% - 32px));
@@ -157,7 +99,7 @@
       display: inline-block;
       margin-bottom: 12px;
       font-size: 0.92rem;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -168,7 +110,7 @@
       font-size: 42px;
       line-height: 1.15;
       letter-spacing: -0.04em;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--text);
     }
 
@@ -186,84 +128,24 @@
       padding: 32px;
     }
 
-    .summary-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-    }
-
-    .note-card {
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-    }
-
-    .table-scroll {
-      overflow-x: auto;
-      border-radius: var(--radius-md);
-    }
-
-    .compare-table,
-    .project-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background: #fff;
-    }
-
-    .compare-table th,
-    .compare-table td,
-    .project-table th,
-    .project-table td {
-      padding: 16px;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .compare-table thead th,
-    .project-table th {
-      background: var(--bg);
-      color: var(--muted-strong);
-      font-weight: 700;
-    }
-
-    .project-table th {
-      width: 160px;
-    }
-
     .hero {
       display: grid;
       grid-template-columns: 180px 1fr;
       align-items: center;
       gap: 48px;
-      min-height: 72vh;
+      min-height: 76vh;
       padding-top: 72px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .profile-shell {
-      display: flex;
-      justify-content: center;
-    }
-
-    .profile-placeholder {
+    .profile-img {
       width: 176px;
       height: 176px;
       border-radius: 50%;
-      background:
-        radial-gradient(circle at 35% 30%, #f8fafc 0%, #e2e8f0 45%, #cbd5e1 100%);
+      object-fit: cover;
       border: 6px solid #fff;
       box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: var(--muted-strong);
-    }
-
-    .profile-placeholder span {
-      display: block;
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: -0.05em;
+      background: #e2e8f0;
     }
 
     .hero-label {
@@ -271,7 +153,7 @@
       margin-bottom: 12px;
       color: var(--muted);
       font-size: 0.95rem;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
@@ -289,7 +171,7 @@
       margin: 0 0 22px;
       font-size: 28px;
       line-height: 1.35;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--muted);
     }
 
@@ -312,7 +194,7 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      font-weight: 800;
+      font-weight: 900;
       white-space: nowrap;
     }
 
@@ -339,7 +221,7 @@
 
     .project-list {
       display: grid;
-      gap: 28px;
+      gap: 32px;
     }
 
     .project-card h3 {
@@ -347,7 +229,7 @@
       font-size: 32px;
       line-height: 1.2;
       letter-spacing: -0.03em;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--text);
     }
 
@@ -355,7 +237,7 @@
       margin-bottom: 22px;
       color: var(--muted);
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .project-intro {
@@ -375,30 +257,42 @@
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .image-placeholder {
-      min-height: 190px;
-      border: 1px dashed #cbd5e1;
+    .project-gallery img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border: 1px solid var(--line);
       border-radius: 18px;
-      background: linear-gradient(135deg, #fff 0%, #f8fafc 55%, #eef2f7 100%);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: var(--muted-strong);
-      padding: 16px;
-      font-weight: 700;
+      background: #f8fafc;
     }
 
-    .project-gallery.monster .image-placeholder {
+    .project-gallery.monster img {
       aspect-ratio: 1 / 1;
-      min-height: auto;
+      height: auto;
+      object-fit: contain;
+      padding: 12px;
     }
 
-    .placeholder-sub {
-      display: block;
-      margin-top: 6px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--muted);
+    .project-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 22px;
+      background: #fff;
+    }
+
+    .project-table th,
+    .project-table td {
+      padding: 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-table th {
+      width: 160px;
+      background: var(--bg);
+      color: var(--muted-strong);
+      font-weight: 800;
     }
 
     .learn-box {
@@ -421,13 +315,14 @@
       color: var(--muted-strong);
     }
 
-    li + li {
-      margin-top: 6px;
+    li + li { margin-top: 6px; }
+
+    .timeline-card hr {
+      border: 0;
+      border-top: 1px solid var(--line);
     }
 
-    .timeline-item {
-      padding: 24px 0;
-    }
+    .timeline-item { padding: 24px 0; }
 
     .timeline-item h3 {
       margin: 0 0 10px;
@@ -441,14 +336,7 @@
       color: var(--muted-strong);
     }
 
-    .timeline-card hr {
-      border: 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .contact-card {
-      text-align: center;
-    }
+    .contact-card { text-align: center; }
 
     .buttons {
       display: flex;
@@ -465,23 +353,17 @@
       min-height: 48px;
       padding: 12px 18px;
       border-radius: 12px;
-      font-weight: 800;
+      font-weight: 900;
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
+    .btn:hover { transform: translateY(-1px); }
 
     .btn.primary {
       background: var(--primary);
       color: #fff;
       border: none;
       box-shadow: 0 10px 24px rgba(17, 24, 39, 0.16);
-    }
-
-    .btn.primary:hover {
-      background: var(--primary-hover);
     }
 
     .btn.secondary {
@@ -496,35 +378,10 @@
       text-align: center;
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
     @media (max-width: 960px) {
-      .summary-grid,
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-shell {
-        justify-content: flex-start;
-      }
-
-      .project-gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .project-gallery.monster {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .hero { grid-template-columns: 1fr; }
+      .project-gallery { grid-template-columns: 1fr; }
+      .project-gallery.monster { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 720px) {
@@ -540,33 +397,13 @@
         gap: 14px;
       }
 
-      section {
-        padding: 72px 0;
-      }
-
-      .section-title {
-        font-size: 34px;
-      }
-
-      .hero {
-        gap: 28px;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero h2 {
-        font-size: 22px;
-      }
-
-      .card {
-        padding: 24px;
-      }
-
-      .project-card h3 {
-        font-size: 26px;
-      }
+      section { padding: 72px 0; }
+      .section-title { font-size: 34px; }
+      .hero { gap: 28px; }
+      .hero h1 { font-size: 48px; }
+      .hero h2 { font-size: 22px; }
+      .card { padding: 24px; }
+      .project-card h3 { font-size: 26px; }
     }
 
     @media (max-width: 640px) {
@@ -579,34 +416,19 @@
         width: 100%;
       }
 
-      .project-table tr {
-        border-bottom: 1px solid var(--line);
-      }
+      .project-table tr { border-bottom: 1px solid var(--line); }
+      .project-table th { border-bottom: none; padding-bottom: 8px; }
+      .project-table td { padding-top: 0; }
 
-      .project-table th {
-        border-bottom: none;
-        padding-bottom: 8px;
-      }
-
-      .project-table td {
-        padding-top: 0;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
+      .buttons { flex-direction: column; }
+      .btn { width: 100%; }
     }
   </style>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">본문으로 바로가기</a>
 
+<body>
   <header class="site-header">
-    <nav class="nav-inner" aria-label="주요 탐색">
+    <nav class="nav-inner">
       <a href="#home" class="logo">Han Juwon</a>
       <div class="nav-links">
         <a href="#home">HOME</a>
@@ -614,113 +436,28 @@
         <a href="#skills">SKILLS</a>
         <a href="#projects">PROJECTS</a>
         <a href="#experience">EXPERIENCE</a>
-        <a href="#contact">LET&apos;S CONNECT</a>
+        <a href="#contact">CONNECT</a>
       </div>
     </nav>
   </header>
 
-  <main id="main-content" class="container">
-    <!-- 문서 맨 앞 Executive Summary -->
-    <section id="summary" aria-labelledby="summary-title">
-      <div class="summary-grid">
-        <div class="card">
-          <span class="section-kicker">Executive Summary</span>
-          <h2 id="summary-title" class="section-title">개정 요약</h2>
-          <p>
-            이 포트폴리오는 기존 한주원 포트폴리오의 전체 구조를 유지하면서,
-            Projects 섹션을 <strong>이미지 + 프로젝트 설명 + 표형 상세 정보</strong> 중심으로 재구성한 최종 버전입니다.
-          </p>
-          <p>
-            전체 디자인은 밝은 배경, 큰 제목 타이포, 흰 카드와 부드러운 그림자를 사용해
-            깔끔하고 읽기 쉬운 방향으로 수정했습니다.
-          </p>
-          <p>
-            또한 Experience에 아르바이트 이력을 포함했고,
-            Let&apos;s Connect 영역에서는 GitHub와 이메일을 바로 확인할 수 있도록 정리했습니다.
-          </p>
-        </div>
-
-        <aside class="card note-card" aria-labelledby="summary-note-title">
-          <h2 id="summary-note-title" class="section-title" style="font-size: 28px; margin-bottom: 14px;">적용 포인트</h2>
-          <p><strong>디자인</strong> — 김영찬 스타일을 반영한 밝은 톤, 큰 이름, 카드형 정보 배치</p>
-          <p><strong>프로젝트</strong> — 이미지, 기간, 구성, 역할, 기술, 설명을 표 형식으로 정리</p>
-          <p><strong>운영성</strong> — GitHub Pages에 바로 올릴 수 있는 단일 HTML 구조</p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- 변경 이력 표 -->
-    <section id="changelog" aria-labelledby="changelog-title">
-      <span class="section-kicker">Changelog</span>
-      <h2 id="changelog-title" class="section-title">변경 이력</h2>
-      <p class="section-desc">
-        기존 버전과 비교했을 때, 프로젝트 가독성과 시각 완성도를 높이는 방향으로 구조와 스타일을 다듬었습니다.
-      </p>
-
-      <div class="card table-scroll">
-        <table class="compare-table">
-          <caption class="sr-only">기존 버전과 개정 버전 비교표</caption>
-          <thead>
-            <tr>
-              <th scope="col">area</th>
-              <th scope="col">old</th>
-              <th scope="col">new</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Hero</td>
-              <td>간단한 자기소개 중심</td>
-              <td>큰 이름 타이포와 직무 중심 소개</td>
-            </tr>
-            <tr>
-              <td>Projects</td>
-              <td>카드형 설명 위주</td>
-              <td>이미지 + 표형 프로젝트 상세 정보</td>
-            </tr>
-            <tr>
-              <td>Visual</td>
-              <td>기본 흰 배경 / 단순 카드</td>
-              <td>#f8fafc 배경 / 흰 카드 / 부드러운 그림자</td>
-            </tr>
-            <tr>
-              <td>Experience</td>
-              <td>장학금 / 동아리 / 캡스톤</td>
-              <td>마트 캐셔 6개월, 편의점 8개월 추가</td>
-            </tr>
-            <tr>
-              <td>Contact</td>
-              <td>Email 버튼 텍스트 고정</td>
-              <td>이메일 주소 자체를 버튼 텍스트로 표기</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="profile-shell">
-        <!-- 실제 프로필 이미지로 바꿀 때:
-             <img src="profile.jpg" alt="한주원 프로필 사진" style="width:176px;height:176px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 14px 34px rgba(15,23,42,.12);" />
-        -->
-        <div class="profile-placeholder" role="img" aria-label="한주원 프로필 이미지 자리표시자">
-          <span>HJW</span>
-        </div>
-      </div>
+  <main class="container">
+    <section class="hero" id="home">
+      <img src="profile.jpg" alt="한주원 프로필 사진" class="profile-img" />
 
       <div>
         <div class="hero-label">Portfolio</div>
-        <h1 id="hero-title">한주원</h1>
+        <h1>한주원</h1>
         <h2>Game Client Programmer / Unity Developer</h2>
         <p>Unity를 활용한 게임 플레이 시스템 개발에 관심이 있습니다.</p>
-        <p>개인 프로젝트와 캡스톤 프로젝트를 통해 2D 및 3D 게임 제작 경험을 쌓고 있습니다.</p>
+        <p>개인 프로젝트와 두 번의 캡스톤 프로젝트를 통해 2D 및 3D 게임 제작 경험을 쌓았습니다.</p>
         <p>게임 제작 과정에서 프리팹, 애니메이션, VFX, 테스트와 같은 작업 흐름을 경험했습니다.</p>
       </div>
     </section>
 
-    <section id="about" aria-labelledby="about-title">
+    <section id="about">
       <span class="section-kicker">About Me</span>
-      <h2 id="about-title" class="section-title">About Me</h2>
+      <h2 class="section-title">About Me</h2>
       <p class="section-desc">
         게임 개발에 관심을 가지고 Unity 기반 프로젝트를 진행해 온 개발자 지망생입니다.
       </p>
@@ -733,15 +470,13 @@
       </div>
     </section>
 
-    <section id="skills" aria-labelledby="skills-title">
+    <section id="skills">
       <span class="section-kicker">Skills</span>
-      <h2 id="skills-title" class="section-title">Skills</h2>
-      <p class="section-desc">
-        지금까지 진행한 프로젝트에서 반복적으로 사용한 기술과 작업 요소를 정리했습니다.
-      </p>
+      <h2 class="section-title">Skills</h2>
+      <p class="section-desc">지금까지 진행한 프로젝트에서 사용한 기술과 작업 요소입니다.</p>
 
       <div class="card">
-        <div class="skills" aria-label="보유 기술 목록">
+        <div class="skills">
           <span class="skill">Unity</span>
           <span class="skill">C#</span>
           <span class="skill">Git</span>
@@ -756,56 +491,40 @@
       </div>
     </section>
 
-    <section id="projects" aria-labelledby="projects-title">
+    <section id="projects">
       <span class="section-kicker">Projects</span>
-      <h2 id="projects-title" class="section-title">Projects</h2>
+      <h2 class="section-title">Projects</h2>
       <p class="section-desc">
-        개인 프로젝트 1개와 캡스톤 디자인 프로젝트 2개를 표 형식으로 정리했습니다.
+        개인 프로젝트 1개와 캡스톤 디자인 프로젝트 2개를 프로젝트별 상세 정보로 정리했습니다.
       </p>
 
       <div class="project-list">
-        <!-- Roll-a-Ball -->
-        <article class="card project-card" aria-labelledby="project-roll-title">
-          <h3 id="project-roll-title">3D Roll-a-Ball 개인 프로젝트</h3>
+        <article class="card project-card">
+          <h3>3D Roll-a-Ball 개인 프로젝트</h3>
           <div class="sub-title">2025 | 개인 프로젝트</div>
           <p class="project-intro">
             Unity 기반 3D Roll-a-Ball 게임을 개인 프로젝트로 제작했습니다.
-            기본 플레이 구조를 구현한 뒤 적 AI와 시간 기반 아이템 시스템을 추가해 게임 플레이에 변화를 주었습니다.
+            기본 플레이 구조 위에 적 AI와 시간 기반 아이템 시스템을 추가했습니다.
           </p>
 
-          <!-- 실제 이미지로 바꿀 때 예시:
-               <img src="roll1.png" alt="Roll-a-Ball 플레이 화면" class="project-shot">
-               <img src="roll2.png" alt="Roll-a-Ball 적 AI 구현 화면" class="project-shot">
-               <img src="roll3.png" alt="Roll-a-Ball 아이템 시스템 구현 화면" class="project-shot">
-          -->
-          <div class="project-gallery" aria-label="3D Roll-a-Ball 프로젝트 이미지 자리표시자">
-            <div class="image-placeholder" role="img" aria-label="Roll-a-Ball 플레이 화면 자리표시자">
-              Roll-a-Ball 1
-              <span class="placeholder-sub">실제 플레이 화면으로 교체</span>
-            </div>
-            <div class="image-placeholder" role="img" aria-label="Roll-a-Ball 적 AI 화면 자리표시자">
-              Roll-a-Ball 2
-              <span class="placeholder-sub">적 AI 구현 이미지로 교체</span>
-            </div>
-            <div class="image-placeholder" role="img" aria-label="Roll-a-Ball 아이템 시스템 화면 자리표시자">
-              Roll-a-Ball 3
-              <span class="placeholder-sub">아이템 시스템 이미지로 교체</span>
-            </div>
+          <div class="project-gallery">
+            <img src="roll1.png" alt="Roll-a-Ball 플레이 화면">
+            <img src="roll2.png" alt="Roll-a-Ball 적 AI 구현 화면">
+            <img src="roll3.png" alt="Roll-a-Ball 아이템 시스템 구현 화면">
           </div>
 
           <table class="project-table">
-            <caption class="sr-only">3D Roll-a-Ball 개인 프로젝트 상세 정보</caption>
             <tbody>
               <tr>
-                <th scope="row">기간</th>
+                <th>기간</th>
                 <td>2025</td>
               </tr>
               <tr>
-                <th scope="row">구성 인원</th>
+                <th>구성 인원</th>
                 <td>개인 프로젝트</td>
               </tr>
               <tr>
-                <th scope="row">담당 역할</th>
+                <th>담당 역할</th>
                 <td>
                   플레이어 이동 및 카메라 시스템 구현<br />
                   맵 구성 및 오브젝트 배치<br />
@@ -815,9 +534,9 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">기술</th>
+                <th>기술</th>
                 <td>
-                  <div class="tag-group" aria-label="Roll-a-Ball 기술 태그">
+                  <div class="tag-group">
                     <span class="tag">Unity</span>
                     <span class="tag">C#</span>
                     <span class="tag">3D Game</span>
@@ -827,9 +546,9 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">설명</th>
+                <th>설명</th>
                 <td>
-                  기본 Roll-a-Ball 구조 위에 적 AI와 시간 기반 아이템 시스템을 추가해,
+                  기본 Roll-a-Ball 구조 위에 적 AI와 시간 기반 아이템 시스템을 추가해
                   짧은 플레이 안에서도 긴장감과 선택 요소가 생기도록 구성했습니다.
                 </td>
               </tr>
@@ -846,48 +565,32 @@
           </div>
         </article>
 
-        <!-- 섬 탈출 게임 -->
-        <article class="card project-card" aria-labelledby="project-island-title">
-          <h3 id="project-island-title">섬 탈출 게임</h3>
+        <article class="card project-card">
+          <h3>섬 탈출 게임</h3>
           <div class="sub-title">2025.09 ~ 2025.12 | 팀 프로젝트</div>
           <p class="project-intro">
             Unity 기반 섬 탈출 게임 제작 프로젝트입니다.
             프로젝트 내에서 몬스터 제작과 VFX 효과 제작을 담당했습니다.
           </p>
 
-          <!-- 실제 이미지로 바꿀 때 예시:
-               <img src="island1.png" alt="섬 탈출 게임 플레이 화면" class="project-shot">
-               <img src="island2.png" alt="섬 탈출 게임 몬스터 제작 이미지" class="project-shot">
-               <img src="island3.png" alt="섬 탈출 게임 VFX 효과 이미지" class="project-shot">
-          -->
-          <div class="project-gallery" aria-label="섬 탈출 게임 프로젝트 이미지 자리표시자">
-            <div class="image-placeholder" role="img" aria-label="섬 탈출 게임 플레이 화면 자리표시자">
-              Island Escape 1
-              <span class="placeholder-sub">실제 플레이 화면으로 교체</span>
-            </div>
-            <div class="image-placeholder" role="img" aria-label="섬 탈출 게임 몬스터 제작 이미지 자리표시자">
-              Island Escape 2
-              <span class="placeholder-sub">몬스터 리소스 이미지로 교체</span>
-            </div>
-            <div class="image-placeholder" role="img" aria-label="섬 탈출 게임 VFX 이미지 자리표시자">
-              Island Escape 3
-              <span class="placeholder-sub">VFX 적용 화면으로 교체</span>
-            </div>
+          <div class="project-gallery">
+            <img src="island1.png" alt="섬 탈출 게임 플레이 화면">
+            <img src="island2.png" alt="섬 탈출 게임 몬스터 제작 이미지">
+            <img src="island3.png" alt="섬 탈출 게임 VFX 효과 이미지">
           </div>
 
           <table class="project-table">
-            <caption class="sr-only">섬 탈출 게임 프로젝트 상세 정보</caption>
             <tbody>
               <tr>
-                <th scope="row">기간</th>
+                <th>기간</th>
                 <td>2025.09 ~ 2025.12</td>
               </tr>
               <tr>
-                <th scope="row">구성 인원</th>
+                <th>구성 인원</th>
                 <td>팀 프로젝트</td>
               </tr>
               <tr>
-                <th scope="row">담당 역할</th>
+                <th>담당 역할</th>
                 <td>
                   몬스터 리소스 제작<br />
                   VFX 효과 제작 및 적용<br />
@@ -896,9 +599,9 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">기술</th>
+                <th>기술</th>
                 <td>
-                  <div class="tag-group" aria-label="섬 탈출 게임 기술 태그">
+                  <div class="tag-group">
                     <span class="tag">Unity</span>
                     <span class="tag">Capstone</span>
                     <span class="tag">Monster</span>
@@ -908,7 +611,7 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">설명</th>
+                <th>설명</th>
                 <td>
                   섬을 배경으로 한 탈출형 게임 제작 프로젝트이며,
                   플레이 분위기에 어울리는 몬스터 표현과 시각 효과 구현에 집중했습니다.
@@ -927,53 +630,33 @@
           </div>
         </article>
 
-        <!-- 2D 로그라이크 액션 게임 -->
-        <article class="card project-card" aria-labelledby="project-rogue-title">
-          <h3 id="project-rogue-title">2D 로그라이크 액션 게임</h3>
+        <article class="card project-card">
+          <h3>2D 로그라이크 액션 게임</h3>
           <div class="sub-title">2026.03 ~ 2026.06 | 팀 프로젝트</div>
           <p class="project-intro">
             Unity 기반 2D 로그라이크풍 게임 제작 프로젝트입니다.
             로그라이크풍 몬스터 제작, 공격 모션 프레임 정리, Unity 프리팹 적용 작업을 담당했습니다.
           </p>
 
-          <!-- 실제 이미지로 바꿀 때 예시:
-               <img src="monster1.png" alt="로그라이크 몬스터 이미지 1" class="project-shot">
-               <img src="monster2.png" alt="로그라이크 몬스터 이미지 2" class="project-shot">
-               <img src="monster3.png" alt="로그라이크 몬스터 이미지 3" class="project-shot">
-               <img src="monster4.png" alt="로그라이크 몬스터 이미지 4" class="project-shot">
-          -->
-          <div class="project-gallery monster" aria-label="2D 로그라이크 액션 게임 몬스터 이미지 자리표시자">
-            <div class="image-placeholder" role="img" aria-label="로그라이크 몬스터 이미지 자리표시자 1">
-              Roguelike 1
-              <span class="placeholder-sub">몬스터 이미지로 교체</span>
-            </div>
-            <div class="image-placeholder" role="img" aria-label="로그라이크 몬스터 이미지 자리표시자 2">
-              Roguelike 2
-              <span class="placeholder-sub">몬스터 이미지로 교체</span>
-            </div>
-            <div class="image-placeholder" role="img" aria-label="로그라이크 몬스터 이미지 자리표시자 3">
-              Roguelike 3
-              <span class="placeholder-sub">몬스터 이미지로 교체</span>
-            </div>
-            <div class="image-placeholder" role="img" aria-label="로그라이크 몬스터 이미지 자리표시자 4">
-              Roguelike 4
-              <span class="placeholder-sub">몬스터 이미지로 교체</span>
-            </div>
+          <div class="project-gallery monster">
+            <img src="monster1.png" alt="로그라이크 몬스터 이미지 1">
+            <img src="monster2.png" alt="로그라이크 몬스터 이미지 2">
+            <img src="monster3.png" alt="로그라이크 몬스터 이미지 3">
+            <img src="monster4.png" alt="로그라이크 몬스터 이미지 4">
           </div>
 
           <table class="project-table">
-            <caption class="sr-only">2D 로그라이크 액션 게임 프로젝트 상세 정보</caption>
             <tbody>
               <tr>
-                <th scope="row">기간</th>
+                <th>기간</th>
                 <td>2026.03 ~ 2026.06</td>
               </tr>
               <tr>
-                <th scope="row">구성 인원</th>
+                <th>구성 인원</th>
                 <td>팀 프로젝트</td>
               </tr>
               <tr>
-                <th scope="row">담당 역할</th>
+                <th>담당 역할</th>
                 <td>
                   로그라이크풍 몬스터 콘셉트 제작<br />
                   AI 이미지 생성 도구를 활용한 몬스터 리소스 제작<br />
@@ -983,9 +666,9 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">기술</th>
+                <th>기술</th>
                 <td>
-                  <div class="tag-group" aria-label="2D 로그라이크 액션 게임 기술 태그">
+                  <div class="tag-group">
                     <span class="tag">Unity</span>
                     <span class="tag">2D Game</span>
                     <span class="tag">Monster Asset</span>
@@ -996,9 +679,8 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">설명</th>
+                <th>설명</th>
                 <td>
-                  2D 로그라이크풍 액션 게임 제작 프로젝트이며,
                   몬스터 시각 리소스와 공격 모션을 Unity 프리팹 및 애니메이션 작업과 연결하는 데 집중했습니다.
                 </td>
               </tr>
@@ -1017,9 +699,9 @@
       </div>
     </section>
 
-    <section id="experience" aria-labelledby="experience-title">
+    <section id="experience">
       <span class="section-kicker">Experience</span>
-      <h2 id="experience-title" class="section-title">Experience</h2>
+      <h2 class="section-title">Experience</h2>
       <p class="section-desc">
         학업, 아르바이트, 프로젝트 경험을 시간 순서대로 정리했습니다.
       </p>
@@ -1080,36 +762,19 @@
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <span class="section-kicker">Let&apos;s Connect</span>
-      <h2 id="contact-title" class="section-title">Let&apos;s Connect</h2>
-      <p class="section-desc">
-        게임 개발과 Unity 프로젝트에 대해 언제든지 연락 주세요.
-      </p>
+    <section id="contact">
+      <span class="section-kicker">Let's Connect</span>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-desc">게임 개발과 Unity 프로젝트에 대해 언제든지 연락 주세요.</p>
 
       <div class="card contact-card">
-        <p>
-          GitHub 저장소와 이메일을 통해 포트폴리오 관련 문의를 받을 수 있습니다.
-        </p>
+        <p>GitHub 저장소와 이메일을 통해 포트폴리오 관련 문의를 받을 수 있습니다.</p>
 
         <div class="buttons">
-          <!-- 실제 GitHub 주소가 다르면 아래 링크를 수정하세요 -->
-          <a
-            href="https://github.com/juwonhan"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn primary"
-            aria-label="GitHub 새 창 열기"
-          >
+          <a href="https://github.com/juwonhan" target="_blank" rel="noopener noreferrer" class="btn primary">
             GitHub
           </a>
-
-          <!-- 이메일 주소가 바뀌면 href와 텍스트를 함께 수정하세요 -->
-          <a
-            href="mailto:hjuwon2999@naver.com"
-            class="btn secondary"
-            aria-label="이메일 보내기"
-          >
+          <a href="mailto:hjuwon2999@naver.com" class="btn secondary">
             hjuwon2999@naver.com
           </a>
         </div>
