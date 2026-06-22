@@ -22,7 +22,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #e5e7eb;
       z-index: 1000;
@@ -31,8 +31,8 @@
     .nav-inner {
       width: 90%;
       max-width: 1120px;
-      margin: auto;
       height: 64px;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -104,9 +104,7 @@
       margin-bottom: 6px;
     }
 
-    .buttons {
-      margin-top: 30px;
-    }
+    .buttons { margin-top: 30px; }
 
     .btn {
       display: inline-block;
@@ -128,9 +126,7 @@
       background: white;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform: translateY(-2px); }
 
     section {
       padding: 86px 0;
@@ -259,6 +255,26 @@
       border: 1px solid #e5e7eb;
     }
 
+    .timeline-item {
+      padding: 24px 0;
+    }
+
+    .timeline-item h3 {
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      margin-bottom: 5px;
+      color: #4b5563;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+    }
+
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -343,7 +359,7 @@
         <a href="#about">ABOUT</a>
         <a href="#skills">SKILLS</a>
         <a href="#projects">PROJECTS</a>
-        <a href="#education">EDUCATION</a>
+        <a href="#experience">EXPERIENCE</a>
         <a href="#contact">CONTACT</a>
       </div>
     </div>
@@ -378,8 +394,8 @@
 
       <div class="card">
         <p>원광대학교 게임콘텐츠학과 졸업 예정입니다.</p>
-        <p>개인 3D Roll-a-Ball 프로젝트와 캡스톤 프로젝트를 통해 게임 제작 흐름을 경험했습니다.</p>
-        <p>오브젝트 배치, 프리팹 제작, 애니메이션 적용, 테스트 과정을 직접 경험했습니다.</p>
+        <p>개인 3D Roll-a-Ball 프로젝트와 두 번의 캡스톤 프로젝트를 통해 게임 제작 흐름을 경험했습니다.</p>
+        <p>오브젝트 배치, 프리팹 제작, 애니메이션 적용, VFX 제작, 테스트 과정을 직접 경험했습니다.</p>
       </div>
     </section>
 
@@ -396,13 +412,14 @@
         <span class="skill">Enemy AI</span>
         <span class="skill">Item System</span>
         <span class="skill">AI Image Tool</span>
+        <span class="skill">VFX</span>
       </div>
     </section>
 
     <section id="projects">
       <h2 class="section-title">Projects</h2>
       <p class="section-desc">
-        개인 프로젝트와 캡스톤 프로젝트를 통해 Unity 기반 게임 제작 경험을 쌓았습니다.
+        개인 프로젝트 1개와 캡스톤 디자인 프로젝트 2개를 통해 Unity 기반 게임 제작 경험을 쌓았습니다.
       </p>
 
       <div class="card">
@@ -453,12 +470,46 @@
       </div>
 
       <div class="card">
-        <h3>캡스톤 디자인 프로젝트</h3>
-        <div class="sub-title">로그라이크풍 몬스터 리소스 제작</div>
+        <h3>섬 탈출 게임</h3>
+        <div class="sub-title">캡스톤 디자인 프로젝트 1</div>
 
         <p>
-          캡스톤 디자인 프로젝트에서 로그라이크풍 몬스터 리소스 제작을 담당했습니다.
-          AI 이미지 생성 도구를 활용해 몬스터를 제작하고, 공격 모션 프레임 정리와 Unity 프리팹 적용 작업을 진행했습니다.
+          2025년 2학기 캡스톤 디자인 프로젝트로 진행한 섬 탈출 게임 제작 프로젝트입니다.
+          프로젝트 내에서 몬스터 제작과 VFX 효과 제작 및 적용을 담당했습니다.
+        </p>
+
+        <ul>
+          <li>섬 탈출 게임 제작 프로젝트 참여</li>
+          <li>몬스터 리소스 제작</li>
+          <li>VFX 효과 제작 및 적용</li>
+          <li>게임 리소스 관리 및 테스트</li>
+        </ul>
+
+        <div class="learn-box">
+          <h3>배운 점</h3>
+          <ul>
+            <li>팀 프로젝트에서 맡은 리소스 제작 역할을 수행했습니다.</li>
+            <li>몬스터와 VFX를 게임 분위기에 맞게 적용하는 과정을 경험했습니다.</li>
+            <li>제작한 리소스를 실제 게임 화면에 반영하고 테스트하는 과정을 익혔습니다.</li>
+          </ul>
+        </div>
+
+        <br>
+
+        <span class="tag">Unity</span>
+        <span class="tag">Capstone</span>
+        <span class="tag">Monster</span>
+        <span class="tag">VFX</span>
+        <span class="tag">Team Project</span>
+      </div>
+
+      <div class="card">
+        <h3>2D 로그라이크 액션 게임</h3>
+        <div class="sub-title">캡스톤 디자인 프로젝트 2</div>
+
+        <p>
+          2026년 1학기 캡스톤 디자인 프로젝트로 진행한 2D 로그라이크풍 게임 제작 프로젝트입니다.
+          로그라이크풍 몬스터 제작, 공격 모션 프레임 정리, Unity 프리팹 적용 작업을 담당했습니다.
         </p>
 
         <div class="monster-gallery">
@@ -497,19 +548,46 @@
       </div>
     </section>
 
-    <section id="education">
-      <h2 class="section-title">Education & Award</h2>
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
 
-      <div class="info-grid">
-        <div class="card">
-          <h3>Education</h3>
-          <p>원광대학교 게임콘텐츠학과 졸업 예정</p>
+      <div class="card">
+
+        <div class="timeline-item">
+          <h3>2021.09</h3>
+          <p><strong>2021학년도 2학기 성적우수장학금 수혜</strong></p>
         </div>
 
-        <div class="card">
-          <h3>Award</h3>
-          <p>2021학년도 2학기 성적우수장학금 수혜</p>
+        <hr>
+
+        <div class="timeline-item">
+          <h3>2025</h3>
+          <p><strong>아티니어 게임 개발 동아리</strong></p>
+          <p>Unity 기반 3D Roll-a-Ball 개인 프로젝트 제작</p>
+          <p>적 AI 구현 및 시간 기반 아이템 시스템 제작</p>
         </div>
+
+        <hr>
+
+        <div class="timeline-item">
+          <h3>2025.09 ~ 2025.12</h3>
+          <p><strong>캡스톤 디자인 프로젝트 1</strong></p>
+          <p>섬 탈출 게임 제작</p>
+          <p>몬스터 제작 담당</p>
+          <p>VFX 효과 제작 및 적용</p>
+        </div>
+
+        <hr>
+
+        <div class="timeline-item">
+          <h3>2026.03 ~ 2026.06</h3>
+          <p><strong>캡스톤 디자인 프로젝트 2</strong></p>
+          <p>2D 로그라이크 액션 게임 제작</p>
+          <p>로그라이크풍 몬스터 제작</p>
+          <p>공격 애니메이션 제작</p>
+          <p>Unity 프리팹 적용 및 테스트</p>
+        </div>
+
       </div>
     </section>
 
