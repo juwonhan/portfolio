@@ -6,32 +6,46 @@
   <title>한주원 | Portfolio</title>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-    body {
-      background: #ffffff;
-      color: #111827;
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    a { color: inherit; text-decoration: none; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .navbar {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
       z-index: 1000;
+      transition: all 0.3s ease;
     }
 
     .nav-inner {
       width: 90%;
       max-width: 1120px;
-      height: 64px;
+      height: 70px;
       margin: auto;
       display: flex;
       justify-content: space-between;
@@ -40,17 +54,28 @@
 
     .logo {
       font-weight: 800;
-      color: #2563eb;
+      font-size: 1.2rem;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
     }
 
     .nav-links a {
-      margin-left: 24px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #4b5563;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #94a3b8;
+      transition: color 0.2s ease;
     }
 
-    .nav-links a:hover { color: #2563eb; }
+    .nav-links a:hover {
+      color: #f8fafc;
+    }
 
     .container {
       width: 90%;
@@ -59,268 +84,359 @@
     }
 
     .hero {
-      min-height: 92vh;
-      padding-top: 120px;
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 54px;
+      min-height: 100vh;
+      padding-top: 80px;
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
       align-items: center;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .profile-wrapper {
+      position: relative;
+    }
+
+    .profile-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(10px);
+      opacity: 0.7;
     }
 
     .profile {
-      width: 170px;
-      height: 170px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #2563eb;
+      border: 4px solid #1e293b;
+      background: #1e293b;
     }
 
     .hero-label {
-      color: #2563eb;
-      font-size: 15px;
-      font-weight: 800;
-      margin-bottom: 10px;
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(59, 130, 246, 0.1);
+      color: #60a5fa;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
     }
 
     .hero h1 {
-      font-size: 64px;
-      line-height: 1.05;
-      margin-bottom: 14px;
-      letter-spacing: -2px;
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -1.5px;
+      font-weight: 800;
     }
 
     .hero h2 {
-      font-size: 24px;
-      color: #374151;
-      margin-bottom: 26px;
-      font-weight: 700;
+      font-size: 1.5rem;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-weight: 600;
     }
 
     .hero p {
-      font-size: 18px;
-      color: #6b7280;
-      max-width: 760px;
-      margin-bottom: 6px;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin-bottom: 12px;
     }
 
-    .buttons { margin-top: 30px; }
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+    }
 
     .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-weight: 800;
-      margin-right: 8px;
-      border: 1px solid #2563eb;
-      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
     }
 
     .btn.primary {
-      background: #2563eb;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
       color: white;
+      border: none;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
     }
 
     .btn.secondary {
-      color: #2563eb;
-      background: white;
+      background: transparent;
+      color: #f8fafc;
+      border: 1px solid #334155;
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn.secondary:hover {
+      background: #1e293b;
+      transform: translateY(-2px);
+    }
 
     section {
-      padding: 86px 0;
+      padding: 120px 0;
       scroll-margin-top: 80px;
     }
 
     .section-title {
-      font-size: 34px;
+      font-size: 2.5rem;
       letter-spacing: -1px;
-      margin-bottom: 26px;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .section-title span {
+      color: #3b82f6;
     }
 
     .section-desc {
-      color: #6b7280;
-      font-size: 17px;
+      color: #94a3b8;
+      font-size: 1.1rem;
       max-width: 760px;
-      margin-bottom: 30px;
+      margin-bottom: 48px;
     }
 
     .card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      padding: 30px;
-      margin-bottom: 24px;
-      box-shadow: 0 12px 30px rgba(17,24,39,0.06);
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 32px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
 
     .card h3 {
-      font-size: 25px;
+      font-size: 1.75rem;
       margin-bottom: 8px;
       letter-spacing: -0.5px;
+      color: #f8fafc;
     }
 
     .sub-title {
-      color: #2563eb;
-      font-weight: 800;
-      margin-bottom: 18px;
+      color: #60a5fa;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .card p {
-      color: #4b5563;
-      margin-bottom: 10px;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
     }
 
     ul {
-      margin-left: 20px;
-      color: #4b5563;
+      margin-left: 24px;
+      color: #cbd5e1;
     }
 
-    li { margin-bottom: 6px; }
+    li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    li::marker {
+      color: #3b82f6;
+    }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .skill,
-    .tag {
-      display: inline-block;
-      border-radius: 999px;
-      font-weight: 800;
+    .skill, .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
 
     .skill {
-      background: #eff6ff;
-      color: #1d4ed8;
-      padding: 10px 16px;
-      border: 1px solid #bfdbfe;
+      background: rgba(59, 130, 246, 0.1);
+      color: #60a5fa;
+      padding: 12px 20px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .skill:hover {
+      background: rgba(59, 130, 246, 0.2);
+      transform: translateY(-2px);
     }
 
     .tag {
-      background: #f3f4f6;
-      color: #374151;
-      padding: 7px 13px;
-      margin: 4px 4px 0 0;
-      font-size: 13px;
+      background: #334155;
+      color: #e2e8f0;
+      padding: 6px 14px;
+      margin: 8px 8px 0 0;
+      font-size: 0.85rem;
+      border: 1px solid #475569;
     }
 
     .project-layout {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 28px;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       align-items: start;
-      margin-top: 20px;
+      margin-top: 32px;
     }
 
     .project-images {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 20px 0;
+      gap: 16px;
+      margin: 32px 0;
     }
 
     .project-images img {
       width: 100%;
-      height: 190px;
+      height: 200px;
       object-fit: cover;
       border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
+      border: 1px solid #334155;
+      background: #0f172a;
+      transition: transform 0.3s ease;
+    }
+
+    .project-images img:hover {
+      transform: scale(1.02);
     }
 
     .monster-gallery {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 20px;
+      gap: 16px;
+      margin-top: 32px;
     }
 
     .monster-gallery img {
       width: 100%;
       aspect-ratio: 1 / 1;
-      object-fit: contain;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      object-fit: cover;
+      background: #0f172a;
+      border: 1px solid #334155;
       border-radius: 16px;
-      padding: 12px;
+      padding: 8px;
     }
 
     .learn-box {
-      margin-top: 20px;
-      padding: 20px;
-      background: #f9fafb;
+      margin-top: 32px;
+      padding: 24px;
+      background: rgba(15, 23, 42, 0.5);
       border-radius: 16px;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #334155;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .learn-box h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: #e2e8f0;
     }
 
     .timeline-item {
-      padding: 24px 0;
+      padding: 32px 0;
+      position: relative;
     }
 
     .timeline-item h3 {
-      color: #2563eb;
-      font-size: 20px;
-      margin-bottom: 10px;
+      color: #60a5fa;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .timeline-item p strong {
+      color: #f8fafc;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 8px;
     }
 
     .timeline-item p {
-      margin-bottom: 5px;
-      color: #4b5563;
+      color: #94a3b8;
+      margin-bottom: 6px;
     }
 
     hr {
       border: none;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #334155;
     }
 
     #contact {
       text-align: center;
+      background: #1e293b;
+      border-radius: 32px;
+      padding: 80px 40px;
+      margin-bottom: 80px;
     }
 
     #contact .section-desc {
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 40px;
     }
 
-    #contact .btn {
-      min-width: 160px;
+    #contact .buttons {
+      justify-content: center;
+      margin-top: 0;
     }
 
     footer {
       text-align: center;
-      padding: 46px 0;
-      color: #6b7280;
-      border-top: 1px solid #e5e7eb;
+      padding: 40px 0;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .nav-inner {
         height: auto;
-        padding: 14px 0;
+        padding: 20px 0;
         flex-direction: column;
-        gap: 10px;
+        gap: 16px;
       }
-
-      .nav-links a {
-        margin: 0 8px;
-        font-size: 13px;
-      }
-
+      
       .hero {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding-top: 150px;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 160px;
+        justify-content: center;
       }
 
-      .hero h1 { font-size: 46px; }
-      .hero h2 { font-size: 21px; }
+      .hero p {
+        margin: 0 auto 12px;
+      }
 
-      .profile {
-        width: 145px;
-        height: 145px;
+      .buttons {
+        justify-content: center;
       }
 
       .project-layout {
@@ -342,13 +458,13 @@
 
   <nav class="navbar">
     <div class="nav-inner">
-      <div class="logo">Han Juwon</div>
+      <div class="logo">Ju-won.dev</div>
       <div class="nav-links">
-        <a href="#about">ABOUT</a>
-        <a href="#skills">SKILLS</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -356,149 +472,66 @@
   <main class="container">
 
     <section class="hero" id="home">
-      <img src="profile.jpg" alt="한주원 프로필 사진" class="profile" />
+      <div class="profile-wrapper">
+        <img src="profile.jpg" alt="한주원 프로필 사진" class="profile" />
+      </div>
 
       <div>
-        <div class="hero-label">PORTFOLIO</div>
+        <div class="hero-label">Game Client Programmer</div>
         <h1>한주원</h1>
-        <h2>Game Client Programmer / Unity Developer</h2>
+        <h2>Unity Developer</h2>
 
-        <p>Unity를 활용한 게임 개발을 공부하고 있습니다.</p>
-        <p>개인 프로젝트와 캡스톤 프로젝트를 통해 2D 및 3D 게임 제작 경험을 쌓았습니다.</p>
-        <p>게임 제작 과정에서 AI 기반 콘텐츠 제작 도구를 활용한 경험이 있습니다.</p>
+        <p>Unity 환경에서 클라이언트 로직 설계와 최적화를 고민하는 개발자입니다.</p>
+        <p>게임 기획부터 AI 프롬프트 엔지니어링을 활용한 에셋 구축, 핵심 시스템 구현까지 전 과정을 경험하며 성장하고 있습니다.</p>
+        
+        <div class="buttons">
+          <a href="#projects" class="btn primary">프로젝트 보기</a>
+          <a href="#contact" class="btn secondary">연락하기</a>
+        </div>
       </div>
     </section>
 
     <section id="about">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title"><span>About</span> Me</h2>
       <p class="section-desc">
-        게임 개발에 관심을 가지고 Unity 기반 프로젝트를 진행해 온 개발자 지망생입니다.
+        사용자 경험을 확장하는 인터랙티브 로직과 효율적인 게임 시스템 구축에 관심이 많은 개발자입니다.
       </p>
 
       <div class="card">
-        <p>원광대학교 게임콘텐츠학과 졸업 예정입니다.</p>
-        <p>개인 3D Roll-a-Ball 프로젝트와 두 번의 캡스톤 프로젝트를 통해 게임 제작 흐름을 경험했습니다.</p>
-        <p>오브젝트 배치, 프리팹 제작, 애니메이션 적용, VFX 제작, 테스트 과정을 직접 경험했습니다.</p>
+        <p>원광대학교 게임콘텐츠학과 졸업을 앞두고 있습니다.</p>
+        <p>개인 3D Roll-a-Ball 프로젝트와 다수의 캡스톤 프로젝트를 거치며 게임 제작 파이프라인 전반을 경험했습니다.</p>
+        <p>오브젝트 풀링, 프리팹 데이터 관리, 상태 기반 AI 설계, 그리고 프로토타이핑 검증 과정을 직접 수행하며 클라이언트 개발의 기본기를 다졌습니다.</p>
       </div>
     </section>
 
     <section id="skills">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title"><span>Tech</span> Skills</h2>
 
       <div class="skills">
-        <span class="skill">Unity</span>
+        <span class="skill">Unity 6</span>
         <span class="skill">C#</span>
-        <span class="skill">Git</span>
-        <span class="skill">GitHub</span>
-        <span class="skill">Prefab</span>
-        <span class="skill">Animation</span>
-        <span class="skill">Enemy AI</span>
-        <span class="skill">Item System</span>
-        <span class="skill">AI Image Tool</span>
-        <span class="skill">VFX</span>
+        <span class="skill">Git / GitHub</span>
+        <span class="skill">MySQL / PHP</span>
+        <span class="skill">Data Structure</span>
+        <span class="skill">FSM / Enemy AI</span>
+        <span class="skill">Prompt Engineering</span>
+        <span class="skill">VFX Graph</span>
       </div>
     </section>
 
     <section id="projects">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title"><span>Featured</span> Projects</h2>
       <p class="section-desc">
-        개인 프로젝트 1개와 캡스톤 디자인 프로젝트 2개를 통해 Unity 기반 게임 제작 경험을 쌓았습니다.
+        기획 의도를 코드와 시스템으로 현실화한 주요 프로젝트들입니다.
       </p>
 
       <div class="card">
-        <h3>3D Roll-a-Ball 개인 프로젝트</h3>
-        <div class="sub-title">2025 | 아티니어 게임 개발 동아리</div>
-
-        <p>
-          Unity 기반 3D Roll-a-Ball 게임을 개인 프로젝트로 제작했습니다.
-          기본적인 플레이 시스템 구현 이후 적 AI와 시간 기반 아이템 시스템을 추가하여 게임 플레이에 변화를 주었습니다.
-        </p>
-
-        <div class="project-layout">
-          <div class="project-images">
-            <img src="roll1.png" alt="Roll-a-Ball 플레이 화면">
-            <img src="roll2.png" alt="적 AI 구현 화면">
-            <img src="roll3.png" alt="아이템 시스템 화면">
-          </div>
-
-          <div>
-            <ul>
-              <li>플레이어 이동 및 카메라 시스템 구현</li>
-              <li>맵 구성 및 게임 오브젝트 배치</li>
-              <li>적 AI 구현</li>
-              <li>시간 증가 아이템 구현</li>
-              <li>적 정지 아이템 구현</li>
-              <li>시간 감소 아이템 구현</li>
-              <li>게임 제작 및 테스트 진행</li>
-            </ul>
-
-            <br>
-
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">3D Game</span>
-            <span class="tag">Enemy AI</span>
-            <span class="tag">Time Item</span>
-          </div>
-        </div>
-
-        <div class="learn-box">
-          <h3>배운 점</h3>
-          <ul>
-            <li>Unity의 오브젝트 관리와 충돌 처리 흐름을 이해했습니다.</li>
-            <li>적 AI와 아이템 시스템을 추가하며 플레이 경험을 확장하는 방법을 경험했습니다.</li>
-            <li>기획부터 구현, 테스트까지 개인 프로젝트 제작 흐름을 익혔습니다.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>섬 탈출 게임</h3>
-        <div class="sub-title">2025.09 ~ 2025.12 | 캡스톤 디자인 프로젝트 1</div>
-
-        <p>
-          Unity 기반 섬 탈출 게임 제작 프로젝트입니다.
-          프로젝트 내에서 몬스터 제작과 VFX 효과 제작을 담당했습니다.
-        </p>
-
-        <div class="project-images">
-          <img src="island1.png" alt="섬 탈출 게임 플레이 화면">
-          <img src="island2.png" alt="몬스터 제작">
-          <img src="island3.png" alt="VFX 효과">
-        </div>
-
-        <ul>
-          <li>몬스터 리소스 제작</li>
-          <li>VFX 효과 제작 및 적용</li>
-          <li>게임 리소스 관리 및 테스트</li>
-          <li>팀 프로젝트 기반 게임 제작 경험</li>
-        </ul>
-
-        <div class="learn-box">
-          <h3>배운 점</h3>
-          <ul>
-            <li>몬스터와 VFX를 게임에 적용하는 과정을 경험했습니다.</li>
-            <li>게임 분위기에 맞는 리소스를 제작하는 방법을 익혔습니다.</li>
-            <li>팀 프로젝트에서 맡은 역할을 실제 결과물로 구현했습니다.</li>
-          </ul>
-        </div>
-
-        <br>
-
-        <span class="tag">Unity</span>
-        <span class="tag">Capstone</span>
-        <span class="tag">Monster</span>
-        <span class="tag">VFX</span>
-        <span class="tag">Team Project</span>
-      </div>
-
-      <div class="card">
-        <h3>2D 로그라이크 액션 게임</h3>
+        <h3>Lander's Spirit (2D 로그라이크 야구 게임)</h3>
         <div class="sub-title">2026.03 ~ 2026.06 | 캡스톤 디자인 프로젝트 2</div>
 
         <p>
-          Unity 기반 2D 로그라이크풍 게임 제작 프로젝트입니다.
-          로그라이크풍 몬스터 제작, 공격 모션 프레임 정리, Unity 프리팹 적용 작업을 담당했습니다.
+          Unity 6를 기반으로 개발 중인 로그라이크풍 야구 액션 게임입니다. 
+          확률형 제단 및 상점 시스템 구현, 공격 모션 프레임 제어, 그리고 프리팹 동적 생성 로직을 담당했습니다.
         </p>
 
         <div class="monster-gallery">
@@ -511,110 +544,163 @@
         <br>
 
         <ul>
-          <li>로그라이크풍 몬스터 콘셉트 제작</li>
-          <li>AI 이미지 생성 도구를 활용한 몬스터 리소스 제작</li>
-          <li>공격 모션 프레임 제작 및 정리</li>
-          <li>Unity 몬스터 프리팹 제작 및 적용</li>
-          <li>애니메이션 연결 및 게임 내 테스트</li>
+          <li>Grok 등 AI 이미지 생성 도구를 활용한 시네마틱 몬스터 리소스 및 콘셉트 제작</li>
+          <li>제단, 상점 등 로그라이크 특유의 확률형 시스템 로직 구현</li>
+          <li>공격 모션 프레임 최적화 및 몬스터 FSM 적용</li>
+          <li>데이터 기반 프리팹 생성 및 애니메이션 트랜지션 연결</li>
         </ul>
 
         <div class="learn-box">
-          <h3>배운 점</h3>
+          <h3>💡 Key Insights</h3>
           <ul>
-            <li>AI 기반 리소스 제작 과정을 게임 개발에 적용해 보았습니다.</li>
-            <li>제작한 리소스를 Unity 프리팹과 애니메이션으로 연결하는 과정을 경험했습니다.</li>
-            <li>팀 프로젝트 안에서 맡은 역할을 결과물로 적용하는 경험을 쌓았습니다.</li>
+            <li>AI 프롬프트 엔지니어링을 에셋 파이프라인에 도입하여 개발 리소스 소요를 단축시켰습니다.</li>
+            <li>확률 기반의 상호작용 시스템을 구현하며 난수 생성 및 데이터 관리 로직을 고도화했습니다.</li>
           </ul>
         </div>
 
         <br>
 
-        <span class="tag">Unity</span>
-        <span class="tag">2D Game</span>
-        <span class="tag">Monster Asset</span>
-        <span class="tag">Animation</span>
-        <span class="tag">Prefab</span>
+        <span class="tag">Unity 6</span>
+        <span class="tag">C#</span>
+        <span class="tag">Roguelike</span>
+        <span class="tag">AI Prompt Engineering</span>
+        <span class="tag">System Design</span>
       </div>
+
+      <div class="card">
+        <h3>섬 탈출 게임</h3>
+        <div class="sub-title">2025.09 ~ 2025.12 | 캡스톤 디자인 프로젝트 1</div>
+
+        <p>
+          Unity 3D 기반의 서바이벌 섬 탈출 게임입니다. 
+          환경과 상호작용하는 몬스터 객체 개발과 시각적 몰입감을 높이는 VFX 연출을 담당했습니다.
+        </p>
+
+        <div class="project-images">
+          <img src="island1.png" alt="섬 탈출 게임 플레이 화면">
+          <img src="island2.png" alt="몬스터 제작">
+          <img src="island3.png" alt="VFX 효과">
+        </div>
+
+        <ul>
+          <li>환경 스케일에 맞는 몬스터 리소스 스케일링 및 최적화</li>
+          <li>공격 및 피격 상태에 대응하는 VFX 파티클 시스템 제작</li>
+          <li>리소스 메모리 관리 및 빌드 테스트 수행</li>
+        </ul>
+
+        <div class="learn-box">
+          <h3>💡 Key Insights</h3>
+          <ul>
+            <li>VFX와 로직의 타이밍 동기화를 맞추며 시각적 피드백의 중요성을 체감했습니다.</li>
+            <li>협업 환경에서의 리소스 버전 관리와 병합 과정을 익혔습니다.</li>
+          </ul>
+        </div>
+
+        <br>
+
+        <span class="tag">Unity 3D</span>
+        <span class="tag">VFX</span>
+        <span class="tag">Particle System</span>
+        <span class="tag">Team Project</span>
+      </div>
+
+      <div class="card">
+        <h3>3D Roll-a-Ball (Advanced)</h3>
+        <div class="sub-title">2025 | 아티니어 게임 개발 동아리</div>
+
+        <p>
+          기본 Roll-a-Ball 튜토리얼을 확장하여 추적형 적 AI와 기믹성 아이템 시스템을 결합한 개인 프로젝트입니다.
+        </p>
+
+        <div class="project-layout">
+          <div>
+            <ul>
+              <li>NavMesh를 활용한 적 추적 AI 구현</li>
+              <li>타임 리미트 추가 및 시간 증감 아이템(Buff/Debuff) 로직 개발</li>
+              <li>상태 이상(적 정지) 아이템 적용 및 코루틴 기반 타이머 제어</li>
+              <li>물리 엔진 기반의 이동 및 충돌 판정 구현</li>
+            </ul>
+
+            <br>
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">NavMesh AI</span>
+            <span class="tag">Coroutine</span>
+          </div>
+
+          <div class="learn-box" style="margin-top: 0;">
+            <h3>💡 Key Insights</h3>
+            <ul>
+              <li>코루틴(Coroutine)을 활용한 비동기적인 타이머 및 상태 유지 처리를 이해했습니다.</li>
+              <li>단순한 조작에 제약 요소(시간, 적)를 추가하여 레벨 디자인의 기본 원리를 경험했습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <section id="experience">
-  <h2 class="section-title">Experience</h2>
+      <h2 class="section-title"><span>Career</span> & Experience</h2>
 
-  <div class="card">
+      <div class="card">
+        <div class="timeline-item">
+          <h3>2026.03 ~ 2026.06</h3>
+          <p><strong>캡스톤 디자인 프로젝트 2</strong></p>
+          <p>로그라이크 야구 게임(Lander's Spirit) 시스템 및 AI 에셋 파이프라인 구축</p>
+        </div>
 
-    <div class="timeline-item">
-      <h3>2021.09</h3>
-      <p><strong>2021학년도 2학기 성적우수장학금 수혜</strong></p>
-    </div>
+        <hr>
 
-    <hr>
+        <div class="timeline-item">
+          <h3>2025.09 ~ 2025.12</h3>
+          <p><strong>캡스톤 디자인 프로젝트 1</strong></p>
+          <p>3D 섬 탈출 게임 몬스터 디자인 및 VFX 로직 구현</p>
+        </div>
 
-    <div class="timeline-item">
-      <h3>2022</h3>
-      <p><strong>마트 캐셔 아르바이트 (6개월)</strong></p>
-      <p>고객 응대 및 계산 업무 수행</p>
-      <p>상품 진열 및 매장 운영 보조</p>
-    </div>
+        <hr>
 
-    <hr>
+        <div class="timeline-item">
+          <h3>2025</h3>
+          <p><strong>아티니어 게임 개발 동아리</strong></p>
+          <p>Unity 기반 3D Roll-a-Ball 물리 및 AI 확장 프로젝트 수행</p>
+        </div>
 
-    <div class="timeline-item">
-      <h3>2025 ~ 2026</h3>
-      <p><strong>편의점 아르바이트 (8개월)</strong></p>
-      <p>고객 응대 및 상품 관리</p>
-      <p>재고 정리 및 매장 운영 업무 수행</p>
-    </div>
+        <hr>
 
-    <hr>
+        <div class="timeline-item">
+          <h3>2024 ~ 2025</h3>
+          <p><strong>편의점 아르바이트 (8개월)</strong></p>
+          <p>매장 운영, 재고 데이터 관리 및 고객 CS 대응</p>
+        </div>
 
-    <div class="timeline-item">
-      <h3>2025</h3>
-      <p><strong>아티니어 게임 개발 동아리</strong></p>
-      <p>Unity 기반 3D Roll-a-Ball 개인 프로젝트 제작</p>
-      <p>적 AI 및 시간 기반 아이템 시스템 구현</p>
-    </div>
+        <hr>
 
-    <hr>
-
-    <div class="timeline-item">
-      <h3>2025.09 ~ 2025.12</h3>
-      <p><strong>캡스톤 디자인 프로젝트 1</strong></p>
-      <p>섬 탈출 게임 제작</p>
-      <p>몬스터 제작 담당</p>
-      <p>VFX 효과 제작 및 적용</p>
-    </div>
-
-    <hr>
-
-    <div class="timeline-item">
-      <h3>2026.03 ~ 2026.06</h3>
-      <p><strong>캡스톤 디자인 프로젝트 2</strong></p>
-      <p>2D 로그라이크 액션 게임 제작</p>
-      <p>로그라이크풍 몬스터 제작</p>
-      <p>공격 애니메이션 제작</p>
-      <p>Unity 프리팹 적용 및 테스트</p>
-    </div>
-
-  </div>
-</section>
+        <div class="timeline-item">
+          <h3>2021.09</h3>
+          <p><strong>2021학년도 2학기 성적우수장학금 수혜</strong></p>
+          <p>전공 및 교양 과목 우수 성취도 달성</p>
+        </div>
+      </div>
+    </section>
 
     <section id="contact">
-      <h2 class="section-title">Let's Connect</h2>
-
+      <h2 class="section-title">Let's <span>Build</span> Together</h2>
       <p class="section-desc">
-        게임 개발과 Unity 프로젝트에 대해 언제든지 연락 주세요.
+        게임 로직 구현과 최적화에 대한 이야기를 나누는 것을 좋아합니다. <br />
+        프로젝트나 채용 관련 문의가 있으시다면 언제든 연락 남겨주세요.
       </p>
 
       <div class="buttons">
-        <a href="https://github.com/juwonhan" class="btn primary">GitHub</a>
-        <a href="https://mail.naver.com/write/popup?to=hjuwon2999@naver.com" target="_blank" class="btn secondary">Email</a>
+        <a href="https://github.com/juwonhan" target="_blank" class="btn primary">GitHub 둘러보기</a>
+        <a href="https://mail.naver.com/write/popup?to=hjuwon2999@naver.com" target="_blank" class="btn secondary">이메일 보내기</a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    © 2026 Han Juwon Portfolio
+    <p>© 2026 Ju-won Han. All rights reserved.</p>
   </footer>
 
 </body>
